@@ -22,6 +22,22 @@
     document.addEventListener("keydown", e => { if (e.key === "Escape" && !drawer.hidden) { setOpen(false); menuBtn.focus(); } });
   }
 
+  // fade out before leaving, fade in on arrival (only when the browser will not do it itself)
+  if (root.classList.contains("js-fade")) {
+    addEventListener("pageshow", () => root.classList.remove("is-leaving"));
+    document.addEventListener("click", e => {
+      const a = e.target.closest("a[href]");
+      if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (a.target === "_blank" || a.hasAttribute("download")) return;
+      let u; try { u = new URL(a.href, location.href); } catch (err) { return; }
+      if (u.protocol !== location.protocol || u.host !== location.host) return;
+      if (u.pathname === location.pathname) return;
+      e.preventDefault();
+      root.classList.add("is-leaving");
+      setTimeout(() => { location.href = a.href; }, 170);
+    });
+  }
+
   const top = document.querySelector(".top");
   const onScroll = () => { if (top) top.classList.toggle("scrolled", window.scrollY > 8); };
   window.addEventListener("scroll", onScroll, { passive: true });

@@ -43,12 +43,12 @@ a{color:inherit}
   ::view-transition-new(root){animation:vtIn .34s cubic-bezier(0,0,.2,1) both}
   @keyframes vtOut{to{opacity:0;transform:translateY(-10px)}}
   @keyframes vtIn{from{opacity:0;transform:translateY(14px)}}
-  @supports not (view-transition-name:none){
-    main{animation:pageIn .34s cubic-bezier(0,0,.2,1) both}
-    @keyframes pageIn{from{opacity:0;transform:translateY(12px)}}
-  }
 }
 @media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+.js-fade main,.js-fade .foot{animation:pageIn .34s cubic-bezier(0,0,.2,1) both}
+.js-fade.is-leaving main,.js-fade.is-leaving .foot{animation:pageOut .17s cubic-bezier(.4,0,1,1) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}}
+@keyframes pageOut{to{opacity:0;transform:translateY(-9px)}}
 
 /* header */
 .top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(150%) blur(10px);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
@@ -309,6 +309,7 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(0,0,0,
 .pub-m{margin:8px 0 0;font-size:14px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;color:var(--ink-2)}
 .pub-m a{font:13px var(--f-mono);color:var(--accent);overflow-wrap:anywhere}
 .pub-m .if{font:600 12.5px var(--f-mono);color:var(--i-blue);background:var(--tint-blue);border-radius:999px;padding:1px 9px}
+.pub-m .pct{font:600 12.5px var(--f-mono);color:var(--i-green);background:var(--tint-green);border-radius:999px;padding:1px 9px}
 .pub-m .role{font:600 11.5px var(--f-mono);color:#fff;background:var(--i-violet);border-radius:999px;padding:1px 9px}
 .pub-m .role.first{background:var(--i-magenta)}
 @media (max-width:560px){.pub{grid-template-columns:minmax(0,1fr);gap:4px}}
