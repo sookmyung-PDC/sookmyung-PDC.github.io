@@ -414,5 +414,41 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(0,0,0,
   .fade-c.f1{animation-delay:.9s}.fade-c.f3{animation-delay:2.7s}
   @keyframes fadeC{to{opacity:1}}
 }
+
+/* card icons. Slow and small on purpose — these sit next to body copy, so they should
+   read as "alive", not as something demanding attention. transform-box:view-box lets the
+   origins be written in the icons' own 96x96 coordinates. */
+.ico [class^="ic-"],.ico [class^="ia-"]{transform-box:view-box}
+.ic-res{animation:icRes 4.2s ease-in-out infinite}
+@keyframes icRes{0%,100%{opacity:1}50%{opacity:.28}}
+.ic-dot{animation:icDot 3.4s ease-in-out infinite;transform-origin:80px 30px}
+@keyframes icDot{0%,100%{transform:scale(.75);opacity:.55}50%{transform:scale(1.35);opacity:1}}
+.ic-cell{animation:icCell 9s ease-in-out infinite;transform-origin:46px 50px}
+@keyframes icCell{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.05) rotate(-4deg)}}
+.ic-nuc{animation:icNuc 6s ease-in-out infinite}
+@keyframes icNuc{0%,100%{transform:translate(0,0)}50%{transform:translate(-2.5px,2px)}}
+.ic-sig{animation:icSig 3s ease-in-out infinite}
+.ic-sig.s2{animation-delay:-1s}.ic-sig.s3{animation-delay:-2s}
+@keyframes icSig{0%,100%{opacity:.25}40%{opacity:1}}
+.ic-gear{animation:icGear 18s linear infinite;transform-origin:48px 48px}
+@keyframes icGear{to{transform:rotate(360deg)}}
+.ic-cap{animation:icCap 3.8s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes icCap{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.ia-blob{animation:iaBlob 8s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes iaBlob{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.05) rotate(4deg)}}
+.ia-core{animation:iaCore 2.8s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes iaCore{0%,100%{transform:scale(.82);opacity:.7}50%{transform:scale(1.12);opacity:1}}
+.ia-aim{animation:iaAim 2.8s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes iaAim{0%,100%{transform:scale(1.1);opacity:.45}50%{transform:scale(.88);opacity:1}}
+.ia-shield{animation:iaShield 4s ease-in-out infinite;transform-origin:48px 50px}
+@keyframes iaShield{0%,100%{transform:scale(.985);opacity:.78}50%{transform:scale(1.015);opacity:1}}
+.ia-wave{animation:iaWave 4s ease-in-out infinite}
+@keyframes iaWave{0%,100%{transform:translate(0,0)}25%{transform:translate(2.5px,-2px)}75%{transform:translate(-2.5px,2px)}}
+.ia-dial{animation:iaDial 6s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes iaDial{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+.ia-hand{animation:iaHand 11s linear infinite;transform-origin:48px 48px}
+@keyframes iaHand{to{transform:rotate(360deg)}}
+.ia-cyc{animation:iaCyc 3.2s ease-in-out infinite}
+@keyframes iaCyc{0%,100%{opacity:.35}50%{opacity:1}}
 [data-motion="off"] *,[data-motion="off"] *::before,[data-motion="off"] *::after{animation:none!important;transition:none!important}
 [data-motion="off"]{scroll-behavior:auto}
