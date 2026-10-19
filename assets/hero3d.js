@@ -1,6 +1,9 @@
 // Live 3D peptide-drug conjugate for the home capsule (three.js r128).
 (() => {
-  const reduce = !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  // The 3D hero runs for everyone. Windows turns "animation effects" off in several
+  // power profiles, so the OS flag would silence the figure for visitors who never asked for that.
+  // To honour the setting again, put the matchMedia check back here.
+  const reduce = document.documentElement.dataset.motion === "off";
   const heroCanvas = document.getElementById("heroGL");
   if (!heroCanvas || !window.THREE) return;
   /* ---------- 3D: MPD1 drug conjugate and caspase-3 (three.js) ---------- */

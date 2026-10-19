@@ -16,10 +16,12 @@
   /* the palette darkened for text on white */
   --i-blue:#1C6ACB; --i-green:#13844A; --i-amber:#A35F00; --i-magenta:#AA3196; --i-violet:#6345D1; --i-cyan:#077F94; --i-rose:#C93152; --i-lime:#517A00;
   --accent:var(--i-green);
-  --f-head:"Poppins","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --f-body:"Noto Sans KR","Poppins","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
-  --f-serif:"Noto Serif KR",Georgia,serif;
-  --f-mono:"IBM Plex Mono","Noto Sans KR",ui-monospace,Consolas,monospace;
+  /* 한글은 산세리프(Pretendard), 영문 제목만 가는 세리프(Newsreader) — 참고 연구실 19곳에서 뽑은 원칙 */
+  --f-head:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-body:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-display:"Newsreader","Noto Serif KR",Georgia,serif;
+  --f-serif:"Newsreader","Noto Serif KR",Georgia,serif;
+  --f-mono:"IBM Plex Mono","Pretendard Variable",ui-monospace,Consolas,monospace;
   color-scheme:light;
 }
 *{box-sizing:border-box}
@@ -38,13 +40,13 @@ a{color:inherit}
    Chromium runs this natively; other browsers fall back to a fade-in of the content. */
 @view-transition{navigation:auto}
 .top{view-transition-name:site-header}
-@media (prefers-reduced-motion:no-preference){
+@media all{
   ::view-transition-old(root){animation:vtOut .16s cubic-bezier(.4,0,1,1) both}
   ::view-transition-new(root){animation:vtIn .34s cubic-bezier(0,0,.2,1) both}
   @keyframes vtOut{to{opacity:0;transform:translateY(-10px)}}
   @keyframes vtIn{from{opacity:0;transform:translateY(14px)}}
 }
-@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+[data-motion="off"]::view-transition-old(root),[data-motion="off"]::view-transition-new(root){animation:none!important}
 .js-fade main,.js-fade .foot{animation:pageIn .34s cubic-bezier(0,0,.2,1) both}
 .js-fade.is-leaving main,.js-fade.is-leaving .foot{animation:pageOut .17s cubic-bezier(.4,0,1,1) both}
 @keyframes pageIn{from{opacity:0;transform:translateY(12px)}}
@@ -81,11 +83,16 @@ a{color:inherit}
 
 /* type */
 .label{font:500 13.5px var(--f-head);letter-spacing:.02em;color:var(--accent);margin:0 0 10px}
-.eyebrow{font:600 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;color:var(--accent)}
-.h1{font:400 clamp(42px,5.8vw,82px)/1.08 var(--f-head);letter-spacing:-.04em;margin:0}
-.h2{font:400 clamp(30px,3.5vw,48px)/1.2 var(--f-head);letter-spacing:-.032em;margin:0;text-wrap:balance}
-.h1 em,.h2 em,.h3 em{font-style:normal;font-weight:600;color:var(--accent)}
-.h3{font:400 clamp(25px,2.6vw,36px)/1.28 var(--f-head);letter-spacing:-.025em;margin:0;text-wrap:balance}
+.eyebrow{font:400 italic clamp(17px,1.5vw,21px)/1.25 var(--f-display);letter-spacing:0;text-transform:none;margin:0 0 12px;color:var(--accent)}
+.h1{font:600 clamp(40px,5.4vw,76px)/1.1 var(--f-head);letter-spacing:-.035em;margin:0}
+.h2{font:600 clamp(28px,3.2vw,45px)/1.22 var(--f-head);letter-spacing:-.03em;margin:0;text-wrap:balance}
+.h1 em,.h2 em,.h3 em{font-style:normal;font-weight:700;color:var(--accent)}
+.h3{font:600 clamp(23px,2.4vw,34px)/1.3 var(--f-head);letter-spacing:-.025em;margin:0;text-wrap:balance}
+/* English headings take the light serif; Korean stays in the sans */
+:root[data-lang="en"] .h1{font-family:var(--f-display);font-weight:300;font-size:clamp(44px,5.9vw,84px);line-height:1.06;letter-spacing:-.022em}
+:root[data-lang="en"] .h2{font-family:var(--f-display);font-weight:300;font-size:clamp(31px,3.5vw,50px);line-height:1.18;letter-spacing:-.018em}
+:root[data-lang="en"] .h3{font-family:var(--f-display);font-weight:400;font-size:clamp(25px,2.6vw,37px);line-height:1.26;letter-spacing:-.014em}
+:root[data-lang="en"] .h1 em,:root[data-lang="en"] .h2 em,:root[data-lang="en"] .h3 em{font-weight:500}
 .lede{margin:20px 0 0;color:var(--ink-2);font-size:clamp(16.5px,1.4vw,18.5px);max-width:40em}
 .lede b,.mission b{color:var(--ink);font-weight:700}
 .center{text-align:center}.center .lede{margin-inline:auto}
@@ -121,7 +128,7 @@ a{color:inherit}
 
 /* home hero */
 .hero{padding-block:clamp(40px,6vw,84px) clamp(48px,6vw,88px);position:relative}
-.wordmark{display:flex;align-items:center;gap:14px;margin:0 0 26px;font:600 clamp(20px,2.1vw,27px)/1.25 var(--f-serif);color:#1B2B5E;letter-spacing:-.01em}
+.wordmark{display:flex;align-items:center;gap:14px;margin:0 0 26px;font:500 clamp(21px,2.2vw,28px)/1.25 var(--f-serif);color:#1B2B5E;letter-spacing:-.012em}
 .wordmark small{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);border-left:1px solid var(--rule);padding-left:14px}
 .hero .h1 em{background:linear-gradient(90deg,#13844A,#077F94 50%,#6345D1);-webkit-background-clip:text;background-clip:text;color:transparent}
 .badge{display:inline-flex;align-items:center;gap:10px;padding:7px 15px;border-radius:999px;background:var(--tint-green);color:var(--ink);font-size:13.5px;line-height:1.4;text-decoration:none;margin-bottom:22px}
@@ -371,8 +378,9 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(0,0,0,
 .labpop-close:hover{background:rgba(255,255,255,.08)}
 @media (max-width:480px){.labpop-body{padding:26px 20px 20px}.labpop-head{font-size:18.5px}.labpop-lead{font-size:14px}}
 
-/* motion: off when reduced motion is requested */
-@media (prefers-reduced-motion:no-preference){
+/* Figure motion runs for everyone. Change `all` back to `(prefers-reduced-motion:no-preference)`
+   to follow the OS setting again; `<html data-motion="off">` stops it either way. */
+@media all{
   .pulse,.pulse-a{animation:pulseA 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
   @keyframes pulseA{0%,100%{opacity:.75;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
   .spin{animation:spinA 14s linear infinite}
@@ -401,4 +409,5 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(0,0,0,
   .fade-c.f1{animation-delay:.9s}.fade-c.f3{animation-delay:2.7s}
   @keyframes fadeC{to{opacity:1}}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+[data-motion="off"] *,[data-motion="off"] *::before,[data-motion="off"] *::after{animation:none!important;transition:none!important}
+[data-motion="off"]{scroll-behavior:auto}
