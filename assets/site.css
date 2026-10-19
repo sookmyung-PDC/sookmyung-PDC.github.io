@@ -132,7 +132,10 @@ a{color:inherit}
 .hero{padding-block:clamp(40px,6vw,84px) clamp(48px,6vw,88px);position:relative}
 .wordmark{display:flex;align-items:center;gap:14px;margin:0 0 26px;font:500 clamp(21px,2.2vw,28px)/1.25 var(--f-serif);color:#1B2B5E;letter-spacing:-.012em}
 .wordmark small{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);border-left:1px solid var(--rule);padding-left:14px}
-.hero .h1 em{background:linear-gradient(90deg,#13844A,#077F94 50%,#6345D1);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* background-clip:text paints only inside the inline box, and Hangul from Noto Serif KR rises
+   above the box Newsreader's metrics define — without the padding the tops of 면역 get shaved off.
+   Vertical padding on an inline box grows the paint area without moving the line. */
+.hero .h1 em{background:linear-gradient(90deg,#13844A,#077F94 50%,#6345D1);-webkit-background-clip:text;background-clip:text;color:transparent;padding-block:.2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .badge{display:inline-flex;align-items:center;gap:10px;padding:7px 15px;border-radius:999px;background:var(--tint-green);color:var(--ink);font-size:13.5px;line-height:1.4;text-decoration:none;margin-bottom:22px}
 .badge:hover{background:#DDF2E1}
 .dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:var(--ax2);box-shadow:0 0 0 3px rgba(61,220,132,.25)}
