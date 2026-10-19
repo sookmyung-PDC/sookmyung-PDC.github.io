@@ -84,11 +84,13 @@ a{color:inherit}
 /* type */
 .label{font:500 13.5px var(--f-head);letter-spacing:.02em;color:var(--accent);margin:0 0 10px}
 .eyebrow{font:400 italic clamp(17px,1.5vw,21px)/1.25 var(--f-display);letter-spacing:0;text-transform:none;margin:0 0 12px;color:var(--accent)}
-.h1{font:600 clamp(40px,5.4vw,76px)/1.1 var(--f-head);letter-spacing:-.035em;margin:0}
-.h2{font:600 clamp(28px,3.2vw,45px)/1.22 var(--f-head);letter-spacing:-.03em;margin:0;text-wrap:balance}
+/* Display headings are serif in both languages: Newsreader for Latin, Noto Serif KR for Hangul.
+   Card and panel sub-headings stay in the sans (serif gets hard to read in Korean below ~24px). */
+.h1{font:600 clamp(40px,5.4vw,76px)/1.16 var(--f-display);letter-spacing:-.022em;margin:0}
+.h2{font:600 clamp(28px,3.2vw,45px)/1.26 var(--f-display);letter-spacing:-.02em;margin:0;text-wrap:balance}
 .h1 em,.h2 em,.h3 em{font-style:normal;font-weight:700;color:var(--accent)}
-.h3{font:600 clamp(23px,2.4vw,34px)/1.3 var(--f-head);letter-spacing:-.025em;margin:0;text-wrap:balance}
-/* English headings take the light serif; Korean stays in the sans */
+.h3{font:600 clamp(23px,2.4vw,34px)/1.34 var(--f-display);letter-spacing:-.018em;margin:0;text-wrap:balance}
+/* English runs lighter — Newsreader 600 is heavier than Noto Serif KR 600 at the same size */
 :root[data-lang="en"] .h1{font-family:var(--f-display);font-weight:300;font-size:clamp(44px,5.9vw,84px);line-height:1.06;letter-spacing:-.022em}
 :root[data-lang="en"] .h2{font-family:var(--f-display);font-weight:300;font-size:clamp(31px,3.5vw,50px);line-height:1.18;letter-spacing:-.018em}
 :root[data-lang="en"] .h3{font-family:var(--f-display);font-weight:400;font-size:clamp(25px,2.6vw,37px);line-height:1.26;letter-spacing:-.014em}
