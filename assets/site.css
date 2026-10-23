@@ -288,7 +288,7 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(0,0,0,
 .cv .yr{font:500 14px var(--f-mono);color:var(--ink-3);white-space:nowrap;padding-top:2px}
 .seats{display:grid;gap:16px}
 .seat{display:grid;grid-template-columns:96px minmax(0,1fr);gap:26px;align-items:center;border-radius:22px;padding:28px 30px;background:var(--tint);text-decoration:none;color:inherit;transition:transform .2s}
-.seat:hover{transform:translateY(-2px)}
+a.seat:hover{transform:translateY(-2px)}
 .seat .av{width:96px;height:96px;border-radius:50%;background:#fff;display:grid;place-items:center}
 .seat .av svg{width:46px;height:46px}
 .seat .role{font:600 11.5px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ax)}
