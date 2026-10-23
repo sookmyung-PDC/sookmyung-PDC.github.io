@@ -382,45 +382,45 @@ a.seat:hover{transform:translateY(-2px)}
 /* Figure motion runs for everyone. Change `all` back to `(prefers-reduced-motion:no-preference)`
    to follow the OS setting again; `<html data-motion="off">` stops it either way. */
 @media all{
-  .pulse,.pulse-a{animation:pulseA 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-  @keyframes pulseA{0%,100%{opacity:.55;transform:scale(.82)}50%{opacity:1;transform:scale(1.18)}}
+  .pulse,.pulse-a{animation:pulseA 1.7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes pulseA{0%,100%{opacity:.45;transform:scale(.7)}50%{opacity:1;transform:scale(1.32)}}
   .pulse-a{animation-delay:-.8s}
-  .spin{animation:spinA 8s linear infinite}
+  .spin{animation:spinA 4.5s linear infinite}
   @keyframes spinA{to{transform:rotate(360deg)}}
-  .wave{animation:wave 2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-  @keyframes wave{0%,100%{opacity:.4;transform:scale(.9)}12%{opacity:1;transform:scale(1.5)}34%{opacity:.75;transform:scale(1)}}
-  .rise{animation:rise 3.2s ease-in-out infinite}
-  @keyframes rise{0%,100%{transform:translate(0,0);opacity:.35}50%{transform:translate(15px,-22px);opacity:1}}
-  .drift{animation:drift 4.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-  @keyframes drift{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(11px,-11px) rotate(15deg)}}
-  .tw{animation:tw 1.3s ease-in-out infinite}
-  @keyframes tw{0%,100%{opacity:.15;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+  .wave{animation:wave 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes wave{0%,100%{opacity:.3;transform:scale(.82)}12%{opacity:1;transform:scale(1.85)}34%{opacity:.7;transform:scale(1)}}
+  .rise{animation:rise 2.3s ease-in-out infinite}
+  @keyframes rise{0%,100%{transform:translate(0,0);opacity:.25}50%{transform:translate(26px,-36px);opacity:1}}
+  .drift{animation:drift 2.9s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes drift{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(19px,-19px) rotate(24deg)}}
+  .tw{animation:tw .95s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.08;transform:scale(.65)}50%{opacity:1;transform:scale(1.4)}}
   .tw{transform-box:fill-box;transform-origin:center}
-  .fly{animation:fly 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-  @keyframes fly{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(19px,-8px) rotate(60deg)}}
-  .breathe,.breathe-a{animation:breathe 2.6s ease-in-out infinite}
-  @keyframes breathe{0%,100%{opacity:.2}50%{opacity:.9}}
+  .fly{animation:fly 2.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes fly{0%,100%{transform:translate(0,0) rotate(-10deg)}50%{transform:translate(32px,-14px) rotate(95deg)}}
+  .breathe,.breathe-a{animation:breathe 1.8s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.1}50%{opacity:1}}
   .breathe-a{animation-delay:-1.1s}
-  .flow-a{animation:flowA 1.7s linear infinite}
+  .flow-a{animation:flowA 1.05s linear infinite}
   @keyframes flowA{to{stroke-dashoffset:-71}}
-  .drift-a{animation:drift 4.2s ease-in-out infinite reverse;transform-box:fill-box;transform-origin:center}
+  .drift-a{animation:drift 2.9s ease-in-out infinite reverse;transform-box:fill-box;transform-origin:center}
   /* utilities the figures share. dash-* differ only in how far the dashes travel:
      the distance has to be a whole number of dash periods or the pattern jumps. */
-  .dash-a{animation:dash70 2.2s linear infinite}      /* dasharray period 7 or 10 */
-  .dash-b{animation:dash72 2.4s linear infinite}      /* period 8 */
-  .dash-c{animation:dash66 3.2s linear infinite}      /* period 11 */
+  .dash-a{animation:dash70 1.3s linear infinite}      /* dasharray period 7 or 10 */
+  .dash-b{animation:dash72 1.45s linear infinite}      /* period 8 */
+  .dash-c{animation:dash66 1.9s linear infinite}      /* period 11 */
   @keyframes dash70{to{stroke-dashoffset:-70}}
   @keyframes dash72{to{stroke-dashoffset:-72}}
   @keyframes dash66{to{stroke-dashoffset:-66}}
-  .swing{animation:swingA 7s ease-in-out infinite}
-  @keyframes swingA{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
-  .bob,.bob2{animation:bobA 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-  .bob2{animation-duration:4.8s;animation-delay:-1.6s}
-  @keyframes bobA{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-  .glow-a{animation:glowA 2.8s ease-in-out infinite}
-  @keyframes glowA{0%,100%{opacity:.3}50%{opacity:1}}
-  .ripple-a{animation:rippleA 2.4s ease-out infinite}
-  @keyframes rippleA{0%{opacity:0;transform:scale(.55)}28%{opacity:.75}100%{opacity:0;transform:scale(1.5)}}
+  .swing{animation:swingA 4.2s ease-in-out infinite}
+  @keyframes swingA{0%,100%{transform:rotate(-13deg)}50%{transform:rotate(13deg)}}
+  .bob,.bob2{animation:bobA 2.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  .bob2{animation-duration:3.3s;animation-delay:-1.1s}
+  @keyframes bobA{0%,100%{transform:translateY(5px)}50%{transform:translateY(-14px)}}
+  .glow-a{animation:glowA 1.9s ease-in-out infinite}
+  @keyframes glowA{0%,100%{opacity:.15}50%{opacity:1}}
+  .ripple-a{animation:rippleA 1.6s ease-out infinite}
+  @keyframes rippleA{0%{opacity:0;transform:scale(.4)}25%{opacity:.9}100%{opacity:0;transform:scale(1.8)}}
   .draw-c{stroke-dasharray:1;stroke-dashoffset:1;animation:drawC 1.8s cubic-bezier(.45,0,.2,1) forwards}
   .draw-c.d2{animation-delay:1.5s;animation-duration:1.6s}
   @keyframes drawC{to{stroke-dashoffset:0}}
@@ -433,38 +433,38 @@ a.seat:hover{transform:translateY(-2px)}
    read as "alive", not as something demanding attention. transform-box:view-box lets the
    origins be written in the icons' own 96x96 coordinates. */
 .ico [class^="ic-"],.ico [class^="ia-"]{transform-box:view-box}
-.ic-ring{animation:icRing 6s ease-in-out infinite;transform-origin:44px 50px}
-@keyframes icRing{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
-.ic-res{animation:icRes 2.6s ease-in-out infinite}
+.ic-ring{animation:icRing 4s ease-in-out infinite;transform-origin:44px 50px}
+@keyframes icRing{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(16deg)}}
+.ic-res{animation:icRes 1.7s ease-in-out infinite}
 @keyframes icRes{0%,100%{opacity:1}50%{opacity:.15}}
-.ic-dot{animation:icDot 2.2s ease-in-out infinite;transform-origin:80px 30px}
+.ic-dot{animation:icDot 1.5s ease-in-out infinite;transform-origin:80px 30px}
 @keyframes icDot{0%,100%{transform:scale(.5);opacity:.4}50%{transform:scale(1.7);opacity:1}}
-.ic-cell{animation:icCell 5.5s ease-in-out infinite;transform-origin:46px 50px}
-@keyframes icCell{0%,100%{transform:scale(.95) rotate(0)}50%{transform:scale(1.1) rotate(-9deg)}}
-.ic-nuc{animation:icNuc 3.6s ease-in-out infinite}
-@keyframes icNuc{0%,100%{transform:translate(0,0)}33%{transform:translate(-5px,3px)}66%{transform:translate(3px,-4px)}}
-.ic-sig{animation:icSig 2.1s ease-in-out infinite;transform-box:view-box}
+.ic-cell{animation:icCell 3.6s ease-in-out infinite;transform-origin:46px 50px}
+@keyframes icCell{0%,100%{transform:scale(.9) rotate(6deg)}50%{transform:scale(1.16) rotate(-14deg)}}
+.ic-nuc{animation:icNuc 2.4s ease-in-out infinite}
+@keyframes icNuc{0%,100%{transform:translate(0,0)}33%{transform:translate(-8px,5px)}66%{transform:translate(6px,-7px)}}
+.ic-sig{animation:icSig 1.4s ease-in-out infinite;transform-box:view-box}
 .ic-sig.s2{animation-delay:-.7s}.ic-sig.s3{animation-delay:-1.4s}
 @keyframes icSig{0%,100%{opacity:.1}40%{opacity:1}}
-.ic-gear{animation:icGear 8s linear infinite;transform-origin:48px 48px}
+.ic-gear{animation:icGear 4.5s linear infinite;transform-origin:48px 48px}
 @keyframes icGear{to{transform:rotate(360deg)}}
-.ic-cap{animation:icCap 2.4s ease-in-out infinite;transform-origin:48px 48px}
-@keyframes icCap{0%,100%{transform:scale(.92)}50%{transform:scale(1.28)}}
-.ia-blob{animation:iaBlob 5s ease-in-out infinite;transform-origin:48px 48px}
-@keyframes iaBlob{0%,100%{transform:scale(.93) rotate(-5deg)}50%{transform:scale(1.12) rotate(7deg)}}
-.ia-core{animation:iaCore 1.9s ease-in-out infinite;transform-origin:48px 48px}
+.ic-cap{animation:icCap 1.6s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes icCap{0%,100%{transform:scale(.84)}50%{transform:scale(1.4)}}
+.ia-blob{animation:iaBlob 3.3s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes iaBlob{0%,100%{transform:scale(.88) rotate(-10deg)}50%{transform:scale(1.18) rotate(13deg)}}
+.ia-core{animation:iaCore 1.3s ease-in-out infinite;transform-origin:48px 48px}
 @keyframes iaCore{0%,100%{transform:scale(.6);opacity:.55}50%{transform:scale(1.35);opacity:1}}
-.ia-aim{animation:iaAim 1.9s ease-in-out infinite;transform-origin:48px 48px}
-@keyframes iaAim{0%,100%{transform:scale(1.25) rotate(0);opacity:.3}50%{transform:scale(.72) rotate(45deg);opacity:1}}
-.ia-shield{animation:iaShield 2.8s ease-in-out infinite;transform-origin:48px 50px}
-@keyframes iaShield{0%,100%{transform:scale(.95);opacity:.6}50%{transform:scale(1.06);opacity:1}}
-.ia-wave{animation:iaWave 2.4s ease-in-out infinite}
-@keyframes iaWave{0%,100%{transform:translate(0,0)}25%{transform:translate(6px,-4px)}75%{transform:translate(-6px,4px)}}
-.ia-dial{animation:iaDial 3.6s ease-in-out infinite;transform-origin:48px 48px}
+.ia-aim{animation:iaAim 1.3s ease-in-out infinite;transform-origin:48px 48px}
+@keyframes iaAim{0%,100%{transform:scale(1.35) rotate(-15deg);opacity:.2}50%{transform:scale(.62) rotate(60deg);opacity:1}}
+.ia-shield{animation:iaShield 1.9s ease-in-out infinite;transform-origin:48px 50px}
+@keyframes iaShield{0%,100%{transform:scale(.9);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+.ia-wave{animation:iaWave 1.6s ease-in-out infinite}
+@keyframes iaWave{0%,100%{transform:translate(0,0)}25%{transform:translate(10px,-7px)}75%{transform:translate(-10px,7px)}}
+.ia-dial{animation:iaDial 2.4s ease-in-out infinite;transform-origin:48px 48px}
 @keyframes iaDial{0%,100%{transform:scale(.96)}50%{transform:scale(1.08)}}
-.ia-hand{animation:iaHand 4.5s linear infinite;transform-origin:48px 48px}
+.ia-hand{animation:iaHand 2.6s linear infinite;transform-origin:48px 48px}
 @keyframes iaHand{to{transform:rotate(360deg)}}
-.ia-cyc{animation:iaCyc 2.2s ease-in-out infinite;transform-origin:48px 48px}
+.ia-cyc{animation:iaCyc 1.5s ease-in-out infinite;transform-origin:48px 48px}
 @keyframes iaCyc{0%,100%{opacity:.15;transform:rotate(-8deg)}50%{opacity:1;transform:rotate(8deg)}}
 [data-motion="off"] *,[data-motion="off"] *::before,[data-motion="off"] *::after{animation:none!important;transition:none!important}
 [data-motion="off"]{scroll-behavior:auto}
