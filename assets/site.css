@@ -286,6 +286,7 @@ a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(0,0,0,
 .cv li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;font-size:16.5px;line-height:1.6}
 .cv li b{font-weight:700}
 .cv .yr{font:500 14px var(--f-mono);color:var(--ink-3);white-space:nowrap;padding-top:2px}
+.courses-l em{display:block;font:13.5px var(--f-mono);font-style:normal;color:var(--ink-3);margin-top:2px}
 .seats{display:grid;gap:16px}
 .seat{display:grid;grid-template-columns:96px minmax(0,1fr);gap:26px;align-items:center;border-radius:22px;padding:28px 30px;background:var(--tint);text-decoration:none;color:inherit;transition:transform .2s}
 a.seat:hover{transform:translateY(-2px)}
